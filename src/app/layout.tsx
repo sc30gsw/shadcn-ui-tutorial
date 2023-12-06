@@ -3,6 +3,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 
+import Header from '@/components/Header'
+
 const notoSansJP = Noto_Sans_JP({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -13,7 +15,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ja">
-      <body className={notoSansJP.className}>{children}</body>
+      <body className={notoSansJP.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
