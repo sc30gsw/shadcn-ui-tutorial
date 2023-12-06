@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 
 import Header from '@/components/Header'
+import ThemeProvider from '@/components/providers/ThemeProvider'
 
 const notoSansJP = Noto_Sans_JP({ subsets: ['latin'] })
 
@@ -16,8 +17,15 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ja">
       <body className={notoSansJP.className}>
-        <Header />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

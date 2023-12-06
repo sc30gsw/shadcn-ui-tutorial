@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 
+import ModeToggle from '@/components/ModeToggle'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -58,7 +59,7 @@ const Header = () => {
       <Link href="/" className="font-medium">
         Hello shadcn/ui
       </Link>
-      <div>
+      <div className="flex items-center gap-4">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -121,6 +122,7 @@ const Header = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+        <ModeToggle />
       </div>
     </div>
   )
