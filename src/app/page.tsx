@@ -1,7 +1,5 @@
-import Image from 'next/image'
-
 const Home = () => {
-  return <main></main>
+  return <main className="p-24"></main>
 }
 
 export default Home
